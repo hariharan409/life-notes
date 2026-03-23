@@ -1,22 +1,22 @@
 #!/bin/sh
 
 # Get staged .md files only
-STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$')
+STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$' || true)
 
 # Nothing to lint
 if [ -z "$STAGED_MD" ]; then
   exit 0
 fi
 
-echo "🔍 Running markdownlint on staged files..."
+echo "Running markdownlint on staged files..."
 echo "$STAGED_MD" | xargs npx markdownlint-cli2
 
 if [ $? -ne 0 ]; then
   echo ""
-  echo "❌ Markdownlint failed. Fix the issues above before committing."
+  echo "Markdownlint failed. Fix the issues above before committing."
   echo "   To skip (not recommended): git commit --no-verify"
   exit 1
 fi
 
-echo "✅ Markdownlint passed."
+echo "Markdownlint passed."
 exit 0
