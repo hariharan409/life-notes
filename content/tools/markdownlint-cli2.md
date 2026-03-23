@@ -3,7 +3,7 @@ tags: [tool, linter, markdown, code-quality, pre-commit, ci]
 tool_name: markdownlint-cli2
 category: Linter / Code Quality
 version_noted: v0.17.2 (markdownlint v0.37.4)
-last_used: 2026-03-23
+last_used: 2026-03-24
 os: [windows, mac, linux]
 ---
 
@@ -16,7 +16,6 @@ os: [windows, mac, linux]
 ## 📦 Install
 
 ```bash
-# Install as dev dependency in the project
 npm install --save-dev markdownlint-cli2
 ```
 
@@ -27,8 +26,8 @@ Requires Node.js. No global install needed — use via `npx` or `npm run` script
 ## ✅ Core Use Cases
 
 - Enforce consistent Markdown formatting across all `.md` files
-- Block bad commits via a git pre-commit hook
-- Fail CI/CD pipelines on unformatted Markdown (for OSS or team repos)
+- Block bad commits via a git pre-commit hook (via Husky)
+- Fail CI/CD pipelines on unformatted Markdown
 - Auto-fix many common issues with `--fix`
 
 ---
@@ -40,7 +39,7 @@ Requires Node.js. No global install needed — use via `npx` or `npm run` script
 ```bash
 npm run lint:md
 # or directly:
-npx markdownlint-cli2 "**/*.md" "#node_modules"
+npx markdownlint-cli2 "**/*.md" "#node_modules" "#themes" "#public"
 ```
 
 **What it does:** Scans all `.md` files, prints violations with file + line number.
@@ -52,10 +51,10 @@ npx markdownlint-cli2 "**/*.md" "#node_modules"
 ```bash
 npm run lint:md:fix
 # or directly:
-npx markdownlint-cli2 --fix "**/*.md" "#node_modules"
+npx markdownlint-cli2 --fix "**/*.md" "#node_modules" "#themes" "#public"
 ```
 
-**What it does:** Automatically fixes: trailing spaces, blank lines around fences, multiple blank lines. Does NOT fix missing code block languages — those need manual attention.
+**What it does:** Automatically fixes trailing spaces, blank lines around fences, multiple blank lines. Does NOT fix missing code block languages — those need manual attention.
 
 ---
 
@@ -77,14 +76,16 @@ npx markdownlint-cli2 --fix "**/*.md" "#node_modules"
 ```json
 {
   "scripts": {
-    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
-    "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\""
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\" \"#themes\" \"#public\"",
+    "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#themes\" \"#public\""
   },
   "devDependencies": {
     "markdownlint-cli2": "^0.17.0"
   }
 }
 ```
+
+> `#themes` and `#public` exclude the Hugo theme submodule and build output from linting.
 
 ---
 
@@ -121,14 +122,17 @@ npx markdownlint-cli2 --fix "**/*.md" "#node_modules"
 
 ---
 
-### Pre-commit hook — `.githooks/pre-commit`
+### Pre-commit hook (via Husky) — `.husky/pre-commit`
+
+The hook is managed by Husky and auto-installs via `npm install`. See [husky.md](husky.md).
 
 ```sh
 #!/bin/sh
 
-STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$')
+STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$' || true)
 
 if [ -z "$STAGED_MD" ]; then
+  echo "⏭️  No .md files staged, skipping markdownlint."
   exit 0
 fi
 
@@ -146,13 +150,7 @@ echo "✅ Markdownlint passed."
 exit 0
 ```
 
-Wire it up once per machine:
-
-```bash
-git config core.hooksPath .githooks
-```
-
-> ⚠️ This setting is local only — each new machine/clone needs to run this command. It is NOT stored in the repo automatically.
+> `|| true` after `grep` prevents exit code 1 from propagating when no `.md` files are staged.
 
 ---
 
@@ -181,15 +179,16 @@ Blocks any PR that has Markdown violations — cannot be bypassed unlike the loc
 
 ## ⚠️ Gotchas & Notes
 
-- `npm ci` requires `package-lock.json` to exist and be committed. Don't add it to `.gitignore`.
-- `git config core.hooksPath .githooks` must be run manually on every fresh clone — it's a local git config, not tracked.
+- `package-lock.json` must be committed — required for CI `npm install` to work.
 - `--fix` is safe to run anytime — it only touches fixable issues and doesn't change content/meaning.
 - To bypass the hook in an emergency: `git commit --no-verify` (use sparingly).
+- `#themes` and `#public` must be excluded or the Hugo theme's own markdown files get linted.
 
 ---
 
 ## 🔗 Related Tools
 
+- [husky.md](husky.md) — manages the pre-commit hook
 - [eslint.md](eslint.md) — same concept but for JavaScript/TypeScript
 
 ## 📎 Official Links

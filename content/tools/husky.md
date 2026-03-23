@@ -3,7 +3,7 @@ tags: [tool, git-hooks, pre-commit, code-quality, javascript]
 tool_name: Husky
 category: Git Hooks / Code Quality
 version_noted: v9.1.7
-last_used: 2026-03-23
+last_used: 2026-03-24
 os: [windows, mac, linux]
 ---
 
@@ -45,7 +45,7 @@ git clone <repo>
 cd <repo>
 npm install
   └── triggers "prepare" script in package.json
-        └── runs "husky"
+        └── runs "git submodule update --init --recursive && husky"
               └── sets git core.hooksPath = .husky/_ automatically
 ```
 
@@ -58,12 +58,12 @@ No manual `git config` needed — ever.
 ```json
 {
   "scripts": {
-    "prepare": "husky"
+    "prepare": "git submodule update --init --recursive && husky"
   }
 }
 ```
 
-This is what makes hooks auto-install. `prepare` runs automatically after `npm install`.
+> `git submodule update --init --recursive` is prepended to also fetch the Hugo Book theme on fresh clone. Both happen in one `npm install`.
 
 ---
 
@@ -78,14 +78,15 @@ Hooks live in `.husky/` as plain shell scripts:
   commit-msg      ← runs to validate commit messages
 ```
 
-Example `.husky/pre-commit` that runs markdownlint on staged `.md` files:
+Current `.husky/pre-commit` that runs markdownlint on staged `.md` files:
 
 ```sh
 #!/bin/sh
 
-STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$')
+STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$' || true)
 
 if [ -z "$STAGED_MD" ]; then
+  echo "⏭️  No .md files staged, skipping markdownlint."
   exit 0
 fi
 
@@ -102,6 +103,8 @@ fi
 echo "✅ Markdownlint passed."
 exit 0
 ```
+
+> `|| true` after `grep` is required — without it, `grep` exits with code 1 when no `.md` files are staged, which propagates out and fails the whole hook even though there is nothing to lint.
 
 ---
 
@@ -127,7 +130,7 @@ No config file — Husky is configured entirely through:
 
 - **Husky v8 vs v9** — breaking change in setup. v9 uses `.husky/_/` internally and simplified `npx husky init`. Old tutorials may show `npx husky install` (v8 syntax — doesn't work in v9).
 - `prepare` does NOT run in CI environments (when `NODE_ENV=production`). This is intentional — hooks are for local dev only. CI should have its own lint step.
-- On Windows, hooks run via Git's bundled shell (sh/bash). Scripts must use Unix line endings (LF not CRLF). Add `.husky/pre-commit` to `.gitattributes` if needed:
+- On Windows, hooks run via Git's bundled shell. Scripts must use Unix line endings (LF not CRLF). Add to `.gitattributes` if needed:
 
   ```text
   .husky/pre-commit eol=lf

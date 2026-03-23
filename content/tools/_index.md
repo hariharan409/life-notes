@@ -1,7 +1,6 @@
 # 🔧 Tools Index
 
 All tools are documented with exact commands and usage.
-Template: [[../_templates/tool-note|tool-note template]]
 
 ---
 
@@ -12,30 +11,27 @@ Template: [[../_templates/tool-note|tool-note template]]
 | [ESLint](eslint.md) | Linter | Static analysis for JS/TS — catches bugs and enforces code style |
 | [Husky](husky.md) | Git Hooks | Auto-installs git hooks via npm install — no manual git config |
 | [markdownlint-cli2](markdownlint-cli2.md) | Linter | Markdown linting with pre-commit hook and CI support |
+| [Hugo](hugo.md) | SSG | Static site generator — builds the live site from Markdown |
 
 ## Editors & IDEs
 
 | Tool | Category | Purpose |
 |---|---|---|
-| | | |
 
 ## DevOps & Cloud
 
 | Tool | Category | Purpose |
 |---|---|---|
-| | | |
 
 ## Languages & Runtimes
 
 | Tool | Category | Purpose |
 |---|---|---|
-| | | |
 
 ## Databases
 
 | Tool | Category | Purpose |
 |---|---|---|
-| | | |
 
 ## Other
 
