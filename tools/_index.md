@@ -39,4 +39,4 @@ Template: [[../_templates/tool-note|tool-note template]]
 
 | Tool | Category | Purpose |
 |---|---|---|
-| | | |
+| [Genspark AI](genspark-ai.md) | AI Workspace | Presentations, research reports, colorful docs via AI agents |
