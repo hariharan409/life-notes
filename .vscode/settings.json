@@ -1,3 +1,6 @@
 ﻿{
-  "git.detectSubmodules": false
+  "git.detectSubmodules": false,
+  "files.exclude": {
+    "themes/": true
+  }
 }
