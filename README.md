@@ -33,3 +33,30 @@ git add .
 git commit -m "notes: <what you added>"
 git push
 ```
+
+---
+
+## 🛠️ Setup (fresh clone)
+
+```bash
+npm install   # installs dependencies + automatically enables the pre-commit hook
+```
+
+> The pre-commit hook runs markdownlint automatically before every commit. No extra steps needed.
+
+---
+
+## ✅ Markdown Lint Commands
+
+```bash
+npm run lint:md        # check all .md files for issues
+npm run lint:md:fix    # auto-fix what can be fixed
+```
+
+The hook only checks **staged files**. To check everything manually, run `npm run lint:md`.
+
+To bypass the hook in an emergency:
+
+```bash
+git commit --no-verify
+```
