@@ -159,5 +159,3 @@ This auto-fixes on every save.
 - Docs: https://eslint.org/docs/latest/
 - Config migration (v8 → v9): https://eslint.org/docs/latest/use/configure/migration-guide
 - VS Code Extension: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
-
-```
