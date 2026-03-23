@@ -6,7 +6,7 @@
   "scripts": {
     "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\" \"#themes\" \"#public\"",
     "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#themes\" \"#public\"",
-    "prepare": "husky"
+    "prepare": "git submodule update --init --recursive && husky"
   },
   "devDependencies": {
     "husky": "^9.1.7",

@@ -41,10 +41,12 @@ git push
 ## 🛠️ Setup (fresh clone)
 
 ```bash
-npm install   # installs dependencies + automatically enables the pre-commit hook
+git clone https://github.com/hariharan409/life-notes.git
+cd life-notes
+npm install   # initializes theme submodule + enables pre-commit hook
 ```
 
-> The pre-commit hook runs markdownlint automatically before every commit. No extra steps needed.
+> `npm install` handles everything: fetches the Hugo Book theme and wires the markdownlint pre-commit hook automatically.
 
 ---
 
