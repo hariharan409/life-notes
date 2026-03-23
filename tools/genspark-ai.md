@@ -17,7 +17,7 @@ os: [windows, mac, linux]
 
 No installation needed. It's a web app.
 
-```
+```text
 https://genspark.ai
 ```
 
@@ -41,9 +41,11 @@ Sign in with Google or email. Free tier available.
 
 1. Go to [genspark.ai](https://genspark.ai)
 2. Type a prompt like:
-   ```
+
+   ```text
    Create a 10-slide presentation on "How microservices architecture works"
    ```
+
 3. Genspark generates slides with visuals, headings, and content
 4. Export or share the link
 
@@ -54,9 +56,11 @@ Sign in with Google or email. Free tier available.
 ### 2. Research Report (Sparkpage)
 
 1. Ask a question or topic:
-   ```
+
+   ```text
    Give me a deep research report on "Docker vs Kubernetes for small teams"
    ```
+
 2. Genspark synthesizes from multiple sources into one structured page
 3. Includes sources, summaries, comparisons
 
@@ -68,9 +72,11 @@ Sign in with Google or email. Free tier available.
 
 1. Click **Agent** mode
 2. Give it a multi-step task:
-   ```
+
+   ```text
    Research the top 5 cloud storage tools, compare pricing, and put it in a table
    ```
+
 3. The agent browses, compiles, and formats the output
 
 **What it does:** Executes tasks autonomously — browse + summarize + format.

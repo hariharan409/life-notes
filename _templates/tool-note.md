@@ -71,6 +71,6 @@ Config file location: `~/.config/toolname`
 
 ## 📎 Official Links
 
-- Docs: 
-- GitHub: 
-- Cheatsheet: 
+- Docs:
+- GitHub:
+- Cheatsheet:

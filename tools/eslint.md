@@ -72,7 +72,7 @@ npx eslint src/ --ext .js,.ts,.tsx
 
 Create a `.eslintignore` file:
 
-```
+```text
 node_modules/
 dist/
 build/
