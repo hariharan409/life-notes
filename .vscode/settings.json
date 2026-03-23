@@ -1,5 +1,3 @@
-{
-  "git.ignoredRepositories": [
-    "./themes/hugo-book"
-  ]
+﻿{
+  "git.detectSubmodules": false
 }
