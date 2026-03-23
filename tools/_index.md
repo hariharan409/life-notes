@@ -9,7 +9,7 @@ Template: [[../_templates/tool-note|tool-note template]]
 
 | Tool | Category | Purpose |
 |---|---|---|
-| | | |
+| [ESLint](eslint.md) | Linter | Static analysis for JS/TS — catches bugs and enforces code style |
 
 ## Editors & IDEs
 
