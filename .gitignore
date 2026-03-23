@@ -1,0 +1,16 @@
+# Obsidian workspace settings (machine-specific, don't track)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# Obsidian plugin data that is local/runtime only
+.obsidian/plugins/obsidian-git/data.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
