@@ -18,7 +18,7 @@
 
 ## ⚡ Quick Start: Adding a New Tool Note
 
-1. Copy `_templates/tool-note.md` into the `tools/` folder
+1. Copy `content/_templates/tool-note.md` into the `content/tools/` folder
 2. Rename it to the tool name (e.g. `git.md`, `ffmpeg.md`)
 3. Fill in the sections
 4. Add a row to [tools/_index.md](tools/_index.md)
