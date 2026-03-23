@@ -4,8 +4,8 @@
   "description": "Personal long-term knowledge base",
   "private": true,
   "scripts": {
-    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
-    "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\"",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\" \"#themes\" \"#public\"",
+    "lint:md:fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#themes\" \"#public\"",
     "prepare": "husky"
   },
   "devDependencies": {

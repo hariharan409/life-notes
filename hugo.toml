@@ -1,0 +1,23 @@
+baseURL = 'https://hariharan409.github.io/life-notes/'
+languageCode = 'en-us'
+title = 'Life Notes'
+theme = 'hugo-book'
+
+[params]
+  # Light/dark mode: 'auto', 'light', or 'dark'
+  BookTheme = 'auto'
+
+  # Show table of contents on right side
+  BookToC = true
+
+  # Enable search
+  BookSearch = true
+
+  # Collapse sidebar sections by default
+  BookCollapseSection = true
+
+  # Show git info (last modified date) at bottom of each page
+  BookGitInfo = true
+
+  # Landing page description
+  BookDescription = 'A personal, long-term knowledge base. Plain Markdown, GitHub-backed.'
