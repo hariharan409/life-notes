@@ -9,20 +9,19 @@
 
 | Section | Purpose |
 |---|---|
-| [[tools/_index\|🔧 Tools]] | CLI tools, apps, and software — with exact usage |
-| [[workflows/_index\|⚙️ Workflows]] | Repeatable processes and how-tos |
-| [[concepts/_index\|💡 Concepts]] | Ideas, mental models, tech concepts |
-| [[journal/_index\|📅 Journal]] | Time-based personal logs |
+| [🔧 Tools](tools/_index.md) | CLI tools, apps, and software — with exact usage |
+| [⚙️ Workflows](workflows/_index.md) | Repeatable processes and how-tos |
+| [💡 Concepts](concepts/_index.md) | Ideas, mental models, tech concepts |
+| [📅 Journal](journal/_index.md) | Time-based personal logs |
 
 ---
 
 ## ⚡ Quick Start: Adding a New Tool Note
 
-1. Go to `tools/` folder
-2. Duplicate `_templates/tool-note.md`
-3. Rename it to the tool name (e.g. `git.md`, `ffmpeg.md`)
-4. Fill in the sections
-5. Add it to `tools/_index.md`
+1. Copy `_templates/tool-note.md` into the `tools/` folder
+2. Rename it to the tool name (e.g. `git.md`, `ffmpeg.md`)
+3. Fill in the sections
+4. Add a row to [tools/_index.md](tools/_index.md)
 
 ---
 

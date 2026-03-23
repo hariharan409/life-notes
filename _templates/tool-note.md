@@ -67,7 +67,7 @@ Config file location: `~/.config/toolname`
 
 ## 🔗 Related Tools
 
-- [[another-tool]]
+- [another-tool](another-tool.md)
 
 ## 📎 Official Links
 
