@@ -10,6 +10,7 @@ Template: [[../_templates/tool-note|tool-note template]]
 | Tool | Category | Purpose |
 |---|---|---|
 | [ESLint](eslint.md) | Linter | Static analysis for JS/TS — catches bugs and enforces code style |
+| [markdownlint-cli2](markdownlint-cli2.md) | Linter | Markdown linting with pre-commit hook and CI support |
 
 ## Editors & IDEs
 
