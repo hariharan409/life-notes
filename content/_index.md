@@ -9,10 +9,10 @@
 
 | Section | Purpose |
 |---|---|
-| [🔧 Tools](tools/_index.md) | CLI tools, apps, and software — with exact usage |
-| [⚙️ Workflows](workflows/_index.md) | Repeatable processes and how-tos |
-| [💡 Concepts](concepts/_index.md) | Ideas, mental models, tech concepts |
-| [📅 Journal](journal/_index.md) | Time-based personal logs |
+| [🔧 Tools](tools/) | CLI tools, apps, and software — with exact usage |
+| [⚙️ Workflows](workflows/) | Repeatable processes and how-tos |
+| [💡 Concepts](concepts/) | Ideas, mental models, tech concepts |
+| [📅 Journal](journal/) | Time-based personal logs |
 
 ---
 
