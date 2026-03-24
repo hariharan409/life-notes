@@ -142,8 +142,8 @@ No config file — Husky is configured entirely through:
 
 ## 🔗 Related Tools
 
-- [markdownlint-cli2.md](markdownlint-cli2.md) — the linter used in the pre-commit hook
-- [eslint.md](eslint.md) — another common tool to run in pre-commit
+- [markdownlint-cli2](markdownlint-cli2/) — the linter used in the pre-commit hook
+- [eslint](eslint/) — another common tool to run in pre-commit
 
 ## 📎 Official Links
 

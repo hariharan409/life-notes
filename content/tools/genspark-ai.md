@@ -102,7 +102,7 @@ Sign in with Google or email. Free tier available.
 
 ## 🔗 Related Tools
 
-- [gamma-ai.md](gamma-ai.md) — another AI presentation tool (more slide-focused)
+- [gamma-ai](gamma-ai/) — another AI presentation tool (more slide-focused)
 
 ## 📎 Official Links
 

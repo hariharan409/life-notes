@@ -124,7 +124,7 @@ npx markdownlint-cli2 --fix "**/*.md" "#node_modules" "#themes" "#public"
 
 ### Pre-commit hook (via Husky) — `.husky/pre-commit`
 
-The hook is managed by Husky and auto-installs via `npm install`. See [husky.md](husky.md).
+The hook is managed by Husky and auto-installs via `npm install`. See [husky](husky/).
 
 ```sh
 #!/bin/sh
@@ -188,8 +188,8 @@ Blocks any PR that has Markdown violations — cannot be bypassed unlike the loc
 
 ## 🔗 Related Tools
 
-- [husky.md](husky.md) — manages the pre-commit hook
-- [eslint.md](eslint.md) — same concept but for JavaScript/TypeScript
+- [husky](husky/) — manages the pre-commit hook
+- [eslint](eslint/) — same concept but for JavaScript/TypeScript
 
 ## 📎 Official Links
 

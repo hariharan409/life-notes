@@ -151,8 +151,8 @@ This auto-fixes on every save.
 
 ## 🔗 Related Tools
 
-- [prettier.md](prettier.md) — code formatter, often used alongside ESLint
-- [typescript.md](typescript.md) — needs `@typescript-eslint` plugin to lint `.ts` files
+- [prettier](prettier/) — code formatter, often used alongside ESLint
+- [typescript](typescript/) — needs `@typescript-eslint` plugin to lint `.ts` files
 
 ## 📎 Official Links
 
