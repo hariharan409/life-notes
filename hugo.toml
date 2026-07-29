@@ -21,3 +21,6 @@ theme = 'hugo-book'
 
   # Landing page description
   BookDescription = 'A personal, long-term knowledge base. Plain Markdown, GitHub-backed.'
+
+  # Custom CSS files
+  BookCustomCSS = ['custom.css']

@@ -12,6 +12,7 @@
 | [🔧 Tools](tools/) | CLI tools, apps, and software — with exact usage |
 | [⚙️ Workflows](workflows/) | Repeatable processes and how-tos |
 | [💡 Concepts](concepts/) | Ideas, mental models, tech concepts |
+| [📚 DSA](dsa/) | Data Structures & Algorithms — comprehensive interview prep |
 | [📅 Journal](journal/) | Time-based personal logs |
 
 ---
